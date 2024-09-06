@@ -1,32 +1,32 @@
-# Initial Setup: Two questionnaires Q1 and Q2 with separate calculator methods
+# Refactor the code and add Q3 in one step (one PR)
 
-class Q1:
+class Questionnaire:
     def __init__(self, answers):
         self.answers = answers
 
     def calculate_score(self):
-        # Example scoring logic for Q1
-        score = sum(self.answers)
-        return score
+        # Basic calculation logic can be defined here
+        return sum(self.answers)
 
-class Q2:
-    def __init__(self, answers):
-        self.answers = answers
 
+class Q1(Questionnaire):
     def calculate_score(self):
-        # Example scoring logic for Q2
-        score = sum(self.answers) * 2
-        return score
+        # Override the basic calculator for Q1 if needed
+        return super().calculate_score()
 
-class Q3:
-    def __init__(self, answers):
-        self.answers = answers
 
+class Q2(Questionnaire):
     def calculate_score(self):
-        # Example scoring logic for Q3
-        score = sum(self.answers) + 5
-        return score
-    
+        # Override the basic calculator for Q2 if needed
+        return super().calculate_score() * 2
+
+
+class Q3(Questionnaire):
+    def calculate_score(self):
+        # Define specific logic for Q3, if needed, or use the base class logic
+        return super().calculate_score() + 5  # Add a fixed value for example
+
+
 # Example usage:
 q1 = Q1([1, 2])
 q2 = Q2([1, 3])
