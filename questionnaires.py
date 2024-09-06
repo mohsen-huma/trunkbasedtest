@@ -21,8 +21,16 @@ class Q2(Questionnaire):
         return super().calculate_score() * 2
 
 
+class Q3(Questionnaire):
+    def calculate_score(self):
+        # Define specific logic for Q3, if needed, or use the base class logic
+        return super().calculate_score() + 5  # Add a fixed value for example
+
+
 # Example usage:
 q1 = Q1([1, 2])
 q2 = Q2([1, 3])
+q3 = Q3([2, 2])
 print("Q1 score:", q1.calculate_score())  # Outputs: Q1 score: 3
 print("Q2 score:", q2.calculate_score())  # Outputs: Q2 score: 8
+print("Q3 score:", q3.calculate_score())  # Outputs: Q3 score: 9
